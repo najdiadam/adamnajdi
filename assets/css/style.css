@@ -321,10 +321,10 @@ p {
     height: 350px;
 }
 
+/* Fixed Hero Image - Replace existing .image-background styles */
 .image-background {
     width: 100%;
     height: 100%;
-    background: var(--gradient-primary);
     border-radius: 50%;
     animation: float 6s ease-in-out infinite;
     position: relative;
@@ -332,22 +332,49 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--gradient-primary);
 }
 
-.image-background::after {
+/* Photo placeholder that works */
+.image-background::before {
     content: '';
     position: absolute;
     top: 10%;
     left: 10%;
     width: 80%;
     height: 80%;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Default icon when no photo */
+.image-background::after {
+    content: '👨‍💼';
+    position: absolute;
+    font-size: 6rem;
+    z-index: 2;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* When you add your photo, add this class to .image-background */
+.image-background.has-photo {
     background-image: url('../images/adam-photo.jpg');
     background-size: cover;
     background-position: center;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.9);
 }
 
+.image-background.has-photo::after {
+    display: none;
+}
+
+.image-background.has-photo::before {
+    background: none;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+}
 /* Enhanced Buttons */
 .btn {
     display: inline-flex;
