@@ -1,18 +1,35 @@
-// Enhanced Mobile Navigation Toggle
+// Enhanced Mobile Navigation Toggle and Website Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navbar = document.getElementById('navbar');
     
-    // Enhanced navbar scroll effect
+    // Enhanced navbar scroll effect with hide/show functionality
+    let lastScrollY = window.scrollY;
+    
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        const currentScrollY = window.scrollY;
+        
+        // Add scrolled class for styling
+        if (currentScrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
+        
+        // Hide/show navbar on scroll (only on desktop)
+        if (window.innerWidth > 768) {
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+        }
+        
+        lastScrollY = currentScrollY;
     });
     
+    // Mobile navigation toggle
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
@@ -38,16 +55,34 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', () => {
             if (navMenu && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
-                const bars = navToggle.querySelectorAll('.bar');
-                bars.forEach(bar => {
-                    bar.style.transform = 'none';
-                    bar.style.opacity = '1';
-                });
+                if (navToggle) {
+                    const bars = navToggle.querySelectorAll('.bar');
+                    bars.forEach(bar => {
+                        bar.style.transform = 'none';
+                        bar.style.opacity = '1';
+                    });
+                }
             }
         });
     });
     
-    // Enhanced scroll animations
+    // Set active nav link based on current page
+    function setActiveNavLink() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const linkHref = link.getAttribute('href');
+            if (linkHref === currentPage || 
+                (currentPage === '' && linkHref === 'index.html') ||
+                (currentPage === 'index.html' && linkHref === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    setActiveNavLink();
+    
+    // Enhanced scroll animations with Intersection Observer
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -67,187 +102,16 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
     
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-    
-    // Add loading animation
-    window.addEventListener('load', () => {
-        document.body.style.opacity = '1';
-        document.body.style.transition = 'opacity 0.5s ease';
-    });
-    
-    // Parallax effect for hero section
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const heroBackground = document.querySelector('.hero::before');
-        if (heroBackground) {
-            heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-    });
-
-    // Contact form handling
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Simple validation
-            if (!data.name || !data.email || !data.subject || !data.message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-            
-            // In a real application, you would send this to your server
-            // For now, we'll just show a success message
-            alert('Thank you for your message! I\'ll get back to you within 24-48 hours.');
-            this.reset();
-        });
-    }
-
-    // Enhanced social button effects
-    const socialBtns = document.querySelectorAll('.social-btn');
-    socialBtns.forEach(btn => {
-        btn.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) scale(1.05)';
-        });
-        btn.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
-    // Add hover effects to cards
-    const cards = document.querySelectorAll('.highlight-card, .timeline-item, .research-card, .project-card, .volunteer-item');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Dynamic typing effect for hero subtitle (optional)
-    const heroSubtitle = document.querySelector('.hero-subtitle');
-    if (heroSubtitle) {
-        const text = heroSubtitle.textContent;
-        const words = text.split(' ');
-        let currentWord = 0;
-        
-        // Only run if not on mobile to avoid performance issues
-        if (window.innerWidth > 768) {
-            setInterval(() => {
-                if (currentWord < words.length - 1) {
-                    currentWord++;
-                } else {
-                    currentWord = 0;
-                }
-                
-                // Add a subtle highlight effect to the current word
-                const highlightedText = words.map((word, index) => {
-                    if (index === currentWord) {
-                        return `<span style="color: var(--primary-color); transition: color 0.3s ease;">${word}</span>`;
-                    }
-                    return word;
-                }).join(' ');
-                
-                heroSubtitle.innerHTML = highlightedText;
-            }, 3000);
-        }
-    }
-});
-
-// Set initial body opacity
-document.body.style.opacity = '0';
-
-// Preloader (optional)
-window.addEventListener('load', () => {
-    // Remove any existing preloader
-    const preloader = document.querySelector('.preloader');
-    if (preloader) {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.remove();
-        }, 500);
-    }
-});
-
-// Add scroll-to-top functionality
-const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-};
-
-// Show scroll-to-top button when scrolled down
-window.addEventListener('scroll', () => {
-    const scrollBtn = document.querySelector('.scroll-to-top');
-    if (scrollBtn) {
-        if (window.scrollY > 300) {
-            scrollBtn.style.opacity = '1';
-            scrollBtn.style.pointerEvents = 'auto';
-        } else {
-            scrollBtn.style.opacity = '0';
-            scrollBtn.style.pointerEvents = 'none';
-        }
-    }
-});
-
-// Performance optimization: Throttle scroll events
-function throttle(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func.apply(this, args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Apply throttling to scroll-heavy functions
-window.addEventListener('scroll', throttle(() => {
-    // Your scroll-heavy code here
-}, 16)); // ~60fps
-
-
-// Add to your existing script.js file
-document.addEventListener('DOMContentLoaded', function() {
-    // Existing code stays here...
-    
     // Enhanced stat counter animation
     function animateStats() {
         const stats = document.querySelectorAll('.animate-stat');
         
-        const observerOptions = {
+        const statsObserverOptions = {
             threshold: 0.5,
             rootMargin: '0px 0px -50px 0px'
         };
         
-        const observer = new IntersectionObserver((entries) => {
+        const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const stat = entry.target;
@@ -255,12 +119,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     const targetNumber = parseInt(stat.dataset.number);
                     const suffix = stat.dataset.suffix || '';
                     
-                    // Add counting class
+                    // Add counting class for animation
                     stat.classList.add('counting');
                     
                     // Animate number counting
                     let currentNumber = 0;
                     const increment = targetNumber / 60; // 60 frames for smooth animation
+                    const duration = 2000; // 2 seconds
+                    const frameTime = duration / 60;
                     
                     const countInterval = setInterval(() => {
                         currentNumber += increment;
@@ -269,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             currentNumber = targetNumber;
                             clearInterval(countInterval);
                             
-                            // Add pulse effect after counting
+                            // Add pulse effect after counting completes
                             setTimeout(() => {
                                 stat.classList.add('pulse');
                                 setTimeout(() => {
@@ -278,18 +144,23 @@ document.addEventListener('DOMContentLoaded', function() {
                             }, 500);
                         }
                         
+                        // Update the number display
                         numberElement.textContent = Math.floor(currentNumber) + suffix;
-                    }, 16); // ~60fps
+                    }, frameTime);
                     
-                    observer.unobserve(entry.target);
+                    // Only animate once
+                    statsObserver.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, statsObserverOptions);
         
-        stats.forEach(stat => observer.observe(stat));
+        stats.forEach(stat => statsObserver.observe(stat));
     }
     
-    // Photo error handling
+    // Initialize stat animations
+    animateStats();
+    
+    // Photo error handling for navbar
     const navPhoto = document.querySelector('.nav-photo');
     if (navPhoto) {
         navPhoto.addEventListener('error', function() {
@@ -308,27 +179,304 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Initialize stat animations
-    animateStats();
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 100; // Account for fixed navbar
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
     
-    // Enhanced navbar scroll effect
-    let lastScrollY = window.scrollY;
+    // Loading animation
+    window.addEventListener('load', () => {
+        document.body.style.opacity = '1';
+        document.body.style.transition = 'opacity 0.5s ease';
+        
+        // Remove any existing preloader
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.remove();
+            }, 500);
+        }
+    });
+    
+    // Contact form handling
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.subject || !data.message) {
+                showNotification('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                showNotification('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual form handling)
+            setTimeout(() => {
+                showNotification('Thank you for your message! I\'ll get back to you within 24-48 hours.', 'success');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+    }
+    
+    // Notification system
+    function showNotification(message, type = 'info') {
+        // Remove existing notification
+        const existingNotification = document.querySelector('.notification');
+        if (existingNotification) {
+            existingNotification.remove();
+        }
+        
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+                <button class="notification-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        `;
+        
+        // Add styles
+        notification.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            max-width: 400px;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+        
+        // Close button functionality
+        const closeBtn = notification.querySelector('.notification-close');
+        closeBtn.addEventListener('click', () => {
+            notification.style.transform = 'translateX(400px)';
+            setTimeout(() => notification.remove(), 300);
+        });
+        
+        // Auto-remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => notification.remove(), 300);
+            }
+        }, 5000);
+    }
+    
+    // Enhanced hover effects for cards
+    const cards = document.querySelectorAll('.highlight-card, .timeline-item, .research-card, .project-card, .volunteer-item, .about-card, .interest-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            if (!this.style.transform.includes('translateY')) {
+                this.style.transform = 'translateY(-5px)';
+            }
+        });
+        card.addEventListener('mouseleave', function() {
+            if (this.style.transform.includes('translateY(-5px)')) {
+                this.style.transform = 'translateY(0)';
+            }
+        });
+    });
+    
+    // Enhanced social button effects
+    const socialBtns = document.querySelectorAll('.social-btn, .footer-social a');
+    socialBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.05)';
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Parallax effect for hero section (performance optimized)
+    let ticking = false;
+    function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const heroElements = document.querySelectorAll('.hero, .page-header');
+        
+        heroElements.forEach(element => {
+            if (element && scrolled < element.offsetHeight) {
+                element.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+        ticking = false;
+    }
+    
     window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('navbar');
-        if (!navbar) return;
-        
-        if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
         }
+    });
+    
+    // Skill bars animation (if present)
+    const skillBars = document.querySelectorAll('.skill-progress');
+    if (skillBars.length > 0) {
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBar = entry.target;
+                    const width = skillBar.style.getPropertyValue('--width');
+                    skillBar.style.animation = 'fillSkill 2s ease-out forwards';
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
         
-        // Hide/show navbar on scroll
-        if (window.scrollY > lastScrollY && window.scrollY > 200) {
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            navbar.style.transform = 'translateY(0)';
-        }
-        lastScrollY = window.scrollY;
+        skillBars.forEach(bar => skillObserver.observe(bar));
+    }
+    
+    // Dynamic typing effect for hero subtitle (performance optimized)
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle && window.innerWidth > 768) {
+        const text = heroSubtitle.textContent;
+        const words = text.split(' ');
+        let currentWord = 0;
+        
+        // Only run on desktop to avoid performance issues
+        const typingInterval = setInterval(() => {
+            if (currentWord < words.length - 1) {
+                currentWord++;
+            } else {
+                currentWord = 0;
+            }
+            
+            // Add a subtle highlight effect to the current word
+            const highlightedText = words.map((word, index) => {
+                if (index === currentWord) {
+                    return `<span style="color: var(--primary-color); transition: color 0.5s ease;">${word}</span>`;
+                }
+                return word;
+            }).join(' ');
+            
+            heroSubtitle.innerHTML = highlightedText;
+        }, 3000);
+        
+        // Clean up interval when page is hidden
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(typingInterval);
+            }
+        });
+    }
+    
+    // Performance optimization: Throttle resize events
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            // Recalculate any size-dependent features
+            setActiveNavLink();
+        }, 250);
     });
 });
+
+// Set initial body opacity for loading animation
+document.body.style.opacity = '0';
+
+// Utility function for throttling events
+function throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func.apply(this, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Utility function for debouncing events
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func.apply(this, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Add scroll-to-top functionality
+const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
+
+// Show scroll-to-top button when scrolled down
+window.addEventListener('scroll', throttle(() => {
+    const scrollBtn = document.querySelector('.scroll-to-top');
+    if (scrollBtn) {
+        if (window.scrollY > 300) {
+            scrollBtn.style.opacity = '1';
+            scrollBtn.style.pointerEvents = 'auto';
+        } else {
+            scrollBtn.style.opacity = '0';
+            scrollBtn.style.pointerEvents = 'none';
+        }
+    }
+}, 100));
+
+// Enhanced error handling
+window.addEventListener('error', (e) => {
+    console.error('JavaScript error:', e.error);
+});
+
+// Service Worker registration (optional, for PWA features)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // Register service worker for offline functionality (if you create one)
+        // navigator.serviceWorker.register('/sw.js');
+    });
+}
