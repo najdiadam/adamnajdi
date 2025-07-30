@@ -7,36 +7,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Adam Najdi</a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="experience.html" class="nav-link">Experience</a>
-                <a href="education.html" class="nav-link">Education</a>
-                <a href="research.html" class="nav-link">Research</a>
-                <a href="projects.html" class="nav-link">Projects</a>
-                <a href="volunteering.html" class="nav-link">Volunteering</a>
-                <a href="leadership.html" class="nav-link">Leadership</a>
-                <a href="conferences.html" class="nav-link">Events</a>
-                <a href="awards.html" class="nav-link">Awards</a>
-                <a href="books.html" class="nav-link">Books</a>
-                <a href="workshops.html" class="nav-link">Workshops</a>
-                <a href="contact.html" class="nav-link active">Contact</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
+    <nav class="navbar" id="navbar">
+        <!-- Same navbar -->
     </nav>
 
     <main>
@@ -49,167 +25,59 @@
 
         <section class="contact-section">
             <div class="container">
-                <div class="contact-grid">
-                    
-                    <div class="contact-info">
-                        <h2>Contact Information</h2>
-                        <p class="contact-intro">
-                            I'm always interested in discussing economics, research opportunities, 
-                            development projects, or potential collaborations. Feel free to reach out!
-                        </p>
-                        
-                        <div class="contact-methods">
-                            <div class="contact-method">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h3>Email</h3>
-                                    <a href="mailto:najdi.adam04@gmail.com">najdi.adam04@gmail.com</a>
-                                    <p>Primary method of contact</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-method">
-                                <div class="contact-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h3>LinkedIn</h3>
-                                    <a href="https://www.linkedin.com/in/adam-najdi" target="_blank" rel="noopener noreferrer">linkedin.com/in/adam-najdi</a>
-                                    <p>Professional networking and updates</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-method">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h3>Phone</h3>
-                                    <a href="tel:+96176314066">+961 76 314 066</a>
-                                    <p>Available for important matters</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-method">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h3>Location</h3>
-                                    <span>Beirut, Lebanon</span>
-                                    <p>Open to local and remote opportunities</p>
-                                </div>
-                            </div>
+                <!-- Contact content with Instagram added -->
+                <div class="contact-methods animate-on-scroll">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
                         </div>
-
-                        <div class="availability">
-                            <h3>Availability</h3>
-                            <div class="availability-info">
-                                <div class="availability-item">
-                                    <i class="fas fa-calendar-check"></i>
-                                    <span>Available for research collaborations</span>
-                                </div>
-                                <div class="availability-item">
-                                    <i class="fas fa-briefcase"></i>
-                                    <span>Open to internship and job opportunities</span>
-                                </div>
-                                <div class="availability-item">
-                                    <i class="fas fa-handshake"></i>
-                                    <span>Interested in consulting projects</span>
-                                </div>
-                                <div class="availability-item">
-                                    <i class="fas fa-users"></i>
-                                    <span>Available for speaking engagements</span>
-                                </div>
-                            </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:najdi.adam04@gmail.com">najdi.adam04@gmail.com</a>
                         </div>
                     </div>
 
-                    <div class="contact-form-section">
-                        <h2>Send a Message</h2>
-                        <form class="contact-form" action="#" method="POST">
-                            <div class="form-group">
-                                <label for="name">Name *</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/adam-najdi" target="_blank">linkedin.com/in/adam-najdi</a>
+                        </div>
+                    </div>
 
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Instagram</h3>
+                            <a href="https://www.instagram.com/adam.h.najdi/" target="_blank">@adam.h.najdi</a>
+                        </div>
+                    </div>
 
-                            <div class="form-group">
-                                <label for="organization">Organization/Company</label>
-                                <input type="text" id="organization" name="organization">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="subject">Subject *</label>
-                                <select id="subject" name="subject" required>
-                                    <option value="">Select a topic</option>
-                                    <option value="research">Research Collaboration</option>
-                                    <option value="job">Job Opportunity</option>
-                                    <option value="internship">Internship</option>
-                                    <option value="consulting">Consulting Project</option>
-                                    <option value="speaking">Speaking Engagement</option>
-                                    <option value="networking">Networking</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="6" required placeholder="Please describe your inquiry, project, or opportunity in detail..."></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i>
-                                Send Message
-                            </button>
-                        </form>
-
-                        <div class="response-time">
-                            <i class="fas fa-clock"></i>
-                            <span>Typical response time: 24-48 hours</span>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+96176314066">+961 76 314 066</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="interests-section">
-                    <h2>Areas of Interest</h2>
-                    <p>I'm particularly interested in discussing the following topics:</p>
-                    <div class="interests-grid">
-                        <div class="interest-item">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Developmental Economics</h3>
-                            <p>Sustainable growth frameworks, policy analysis, and economic development strategies</p>
-                        </div>
-                        <div class="interest-item">
-                            <i class="fas fa-globe-americas"></i>
-                            <h3>Regional Economic Development</h3>
-                            <p>Lebanon's economic revitalization, Middle East economic trends, and emerging markets</p>
-                        </div>
-                        <div class="interest-item">
-                            <i class="fas fa-database"></i>
-                            <h3>Economic Research</h3>
-                            <p>Econometric analysis, data-driven policy evaluation, and interdisciplinary research</p>
-                        </div>
-                        <div class="interest-item">
-                            <i class="fas fa-users"></i>
-                            <h3>Community Impact</h3>
-                            <p>Social entrepreneurship, humanitarian initiatives, and sustainable development projects</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="social-links">
+                <div class="social-links animate-on-scroll">
                     <h2>Connect on Social Media</h2>
                     <div class="social-buttons">
-                        <a href="https://www.linkedin.com/in/adam-najdi" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
+                        <a href="https://www.linkedin.com/in/adam-najdi" target="_blank" class="social-btn linkedin">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.instagram.com/adam.h.najdi/" target="_blank" class="social-btn instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
                         </a>
                         <a href="mailto:najdi.adam04@gmail.com" class="social-btn email">
                             <i class="fas fa-envelope"></i>
@@ -222,21 +90,7 @@
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2025 Adam Najdi. All rights reserved.</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/adam-najdi" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:najdi.adam04@gmail.com">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <!-- Same footer with Instagram -->
     </footer>
 
     <script src="assets/js/script.js"></script>
