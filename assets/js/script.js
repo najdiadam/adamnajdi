@@ -510,3 +510,45 @@ if ('serviceWorker' in navigator) {
        // navigator.serviceWorker.register('/sw.js');
    });
 }
+
+// Certificate click to enlarge
+document.addEventListener('DOMContentLoaded', function() {
+    const certificateImage = document.querySelector('.certificate-image');
+    if (certificateImage) {
+        certificateImage.addEventListener('click', function() {
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            `;
+            
+            // Create enlarged image
+            const enlargedImg = document.createElement('img');
+            enlargedImg.src = this.src;
+            enlargedImg.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                border-radius: 8px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            `;
+            
+            overlay.appendChild(enlargedImg);
+            document.body.appendChild(overlay);
+            
+            // Close on click
+            overlay.addEventListener('click', () => {
+                document.body.removeChild(overlay);
+            });
+        });
+    }
+});
