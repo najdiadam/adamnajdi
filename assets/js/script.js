@@ -232,3 +232,103 @@ function throttle(func, wait) {
 window.addEventListener('scroll', throttle(() => {
     // Your scroll-heavy code here
 }, 16)); // ~60fps
+
+
+// Add to your existing script.js file
+document.addEventListener('DOMContentLoaded', function() {
+    // Existing code stays here...
+    
+    // Enhanced stat counter animation
+    function animateStats() {
+        const stats = document.querySelectorAll('.animate-stat');
+        
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stat = entry.target;
+                    const numberElement = stat.querySelector('.stat-number');
+                    const targetNumber = parseInt(stat.dataset.number);
+                    const suffix = stat.dataset.suffix || '';
+                    
+                    // Add counting class
+                    stat.classList.add('counting');
+                    
+                    // Animate number counting
+                    let currentNumber = 0;
+                    const increment = targetNumber / 60; // 60 frames for smooth animation
+                    
+                    const countInterval = setInterval(() => {
+                        currentNumber += increment;
+                        
+                        if (currentNumber >= targetNumber) {
+                            currentNumber = targetNumber;
+                            clearInterval(countInterval);
+                            
+                            // Add pulse effect after counting
+                            setTimeout(() => {
+                                stat.classList.add('pulse');
+                                setTimeout(() => {
+                                    stat.classList.remove('pulse');
+                                }, 2000);
+                            }, 500);
+                        }
+                        
+                        numberElement.textContent = Math.floor(currentNumber) + suffix;
+                    }, 16); // ~60fps
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        stats.forEach(stat => observer.observe(stat));
+    }
+    
+    // Photo error handling
+    const navPhoto = document.querySelector('.nav-photo');
+    if (navPhoto) {
+        navPhoto.addEventListener('error', function() {
+            this.style.display = 'none';
+            const fallback = this.nextElementSibling;
+            if (fallback && fallback.classList.contains('photo-fallback')) {
+                fallback.style.display = 'flex';
+            }
+        });
+        
+        navPhoto.addEventListener('load', function() {
+            const fallback = this.nextElementSibling;
+            if (fallback && fallback.classList.contains('photo-fallback')) {
+                fallback.style.display = 'none';
+            }
+        });
+    }
+    
+    // Initialize stat animations
+    animateStats();
+    
+    // Enhanced navbar scroll effect
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (!navbar) return;
+        
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        
+        // Hide/show navbar on scroll
+        if (window.scrollY > lastScrollY && window.scrollY > 200) {
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            navbar.style.transform = 'translateY(0)';
+        }
+        lastScrollY = window.scrollY;
+    });
+});
