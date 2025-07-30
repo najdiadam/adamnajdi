@@ -345,6 +345,12 @@ p {
     border: 4px solid rgba(255, 255, 255, 0.9);
 }
 
+/* Image fallbacks */
+.university-logo[data-logo="aub"]::before { content: '🎓'; }
+.company-logo[data-logo="alef"]::before { content: '📱'; }
+.company-logo[data-logo="sheild"]::before { content: '🛡️'; }
+.company-logo[data-logo="bdl"]::before { content: '🏦'; }
+
 /* Enhanced Buttons */
 .btn {
     display: inline-flex;
