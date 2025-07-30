@@ -755,7 +755,7 @@ p {
     z-index: 1;
 }
 
-/* FIXED CONTACT PAGE INTERESTS */
+/* FIXED CONTACT PAGE INTERESTS - Now 3 items in a row */
 .interests-section {
     background: var(--bg-secondary);
     padding: 4rem;
@@ -783,13 +783,16 @@ p {
 
 .interests-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     margin-top: 2rem;
 }
 
 .interest-item {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 1.5rem;
     padding: 2.5rem;
     background: var(--bg-primary);
@@ -818,35 +821,134 @@ p {
 }
 
 .interest-item:hover {
-    transform: translateY(-5px) scale(1.02);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: var(--shadow-xl);
     border-color: var(--primary-color);
 }
 
 .interest-item i {
     color: var(--primary-color);
-    font-size: 2.5rem;
-    flex-shrink: 0;
-    margin-top: 0.5rem;
+    font-size: 3rem;
     transition: var(--transition);
+    background: rgba(37, 99, 235, 0.1);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .interest-item:hover i {
     transform: scale(1.2) rotate(5deg);
+    background: var(--primary-color);
+    color: white;
 }
 
 .interest-item h3 {
     color: var(--text-primary);
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
 }
 
 .interest-item p {
     color: var(--text-secondary);
-    line-height: 1.7;
-    font-size: 1.05rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
     margin: 0;
+}
+
+/* FIXED HERO PHOTO POSITIONING - Better crop control */
+.hero-photo {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+    background-image: url('assets/images/adam-photo.jpg');
+    background-size: 110%; /* Slightly zoom out to show more of the head */
+    background-position: center 20%; /* Move the focus point up to show more of the head */
+    background-repeat: no-repeat;
+}
+
+/* Responsive adjustments for interests */
+@media (max-width: 968px) {
+    .interests-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .interest-item {
+        padding: 2rem;
+    }
+    
+    .interest-item i {
+        font-size: 2.5rem;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Responsive adjustments for interests */
+@media (max-width: 968px) {
+    .interests-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .interest-item {
+        padding: 2rem;
+    }
+    
+    .interest-item i {
+        font-size: 2.5rem;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .interests-section {
+        padding: 3rem 2rem;
+    }
+    
+    .interest-item {
+        padding: 1.5rem;
+    }
+    
+    .hero-photo {
+        width: 280px;
+        height: 280px;
+        background-size: 115%; /* Slightly more zoom out on mobile */
+        background-position: center 15%; /* Better positioning on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .interests-section {
+        padding: 2rem 1rem;
+    }
+    
+    .interests-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .interest-item h3 {
+        font-size: 1.125rem;
+    }
+    
+    .interest-item i {
+        font-size: 2rem;
+        width: 60px;
+        height: 60px;
+    }
 }
 
 /* Rest of existing styles... */
@@ -2904,10 +3006,24 @@ p {
        height: 280px;
    }
 
-   .hero-photo {
-       width: 280px;
-       height: 280px;
-   }
+/* FIXED HERO PHOTO POSITIONING - Better crop control */
+.hero-photo {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+    background-image: url('assets/images/adam-photo.jpg');
+    background-size: 110%; /* Slightly zoom out to show more of the head */
+    background-position: center 20%; /* Move the focus point up to show more of the head */
+    background-repeat: no-repeat;
+}
 
    .photo-placeholder {
        width: 250px;
