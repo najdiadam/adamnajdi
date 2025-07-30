@@ -10,32 +10,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Adam Najdi</a>
+<body><nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <div class="logo-photo">
+                <img src="assets/images/adam-photo.jpg" alt="Adam Najdi" class="nav-photo">
+                <div class="photo-fallback">
+                    <i class="fas fa-user"></i>
+                </div>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="experience.html" class="nav-link">Experience</a>
-                <a href="education.html" class="nav-link">Education</a>
-                <a href="research.html" class="nav-link">Research</a>
-                <a href="volunteering.html" class="nav-link">Volunteering</a>
-                <a href="leadership.html" class="nav-link">Leadership</a>
-                <a href="awards.html" class="nav-link">Awards</a>
-                <a href="books.html" class="nav-link">Books</a>
-                <a href="workshops.html" class="nav-link">Workshops</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="logo-text">
+                <span class="name">Adam Najdi</span>
+                <span class="title">Economist</span>
             </div>
         </div>
-    </nav>
+        <div class="nav-menu" id="nav-menu">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="about.html" class="nav-link">
+                <i class="fas fa-user-circle"></i>
+                <span>About</span>
+            </a>
+            <a href="experience.html" class="nav-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </a>
+            <a href="education.html" class="nav-link">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Education</span>
+            </a>
+            <a href="research.html" class="nav-link">
+                <i class="fas fa-microscope"></i>
+                <span>Research</span>
+            </a>
+            <a href="volunteering.html" class="nav-link">
+                <i class="fas fa-heart"></i>
+                <span>Volunteering</span>
+            </a>
+            <a href="leadership.html" class="nav-link">
+                <i class="fas fa-crown"></i>
+                <span>Leadership</span>
+            </a>
+            <a href="awards.html" class="nav-link">
+                <i class="fas fa-trophy"></i>
+                <span>Awards</span>
+            </a>
+            <a href="books.html" class="nav-link">
+                <i class="fas fa-book"></i>
+                <span>Books</span>
+            </a>
+            <a href="workshops.html" class="nav-link">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Workshops</span>
+            </a>
+            <a href="contact.html" class="nav-link">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
 
     <main>
         <section class="hero">
@@ -50,20 +91,38 @@
                     Senior Economics student at AUB passionate about developmental economics, 
                     sustainable growth frameworks, and data-driven policy solutions for Lebanon's economic future.
                 </p>
-                <div class="hero-stats">
-                    <div class="stat animate-on-scroll">
-                        <span class="stat-number">7+</span>
-                        <span class="stat-label">Months Professional Experience</span>
-                    </div>
-                    <div class="stat animate-on-scroll">
-                        <span class="stat-number">3</span>
-                        <span class="stat-label">Research Projects</span>
-                    </div>
-                    <div class="stat animate-on-scroll">
-                        <span class="stat-number">300+</span>
-                        <span class="stat-label">People Helped</span>
-                    </div>
-                </div>
+<div class="hero-stats">
+    <div class="stat animate-stat" data-number="7" data-suffix="+">
+        <div class="stat-icon">
+            <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="stat-content">
+            <span class="stat-number">0+</span>
+            <span class="stat-label">Months Professional Experience</span>
+        </div>
+        <div class="stat-glow"></div>
+    </div>
+    <div class="stat animate-stat" data-number="3" data-suffix="" style="--delay: 0.2s;">
+        <div class="stat-icon">
+            <i class="fas fa-flask"></i>
+        </div>
+        <div class="stat-content">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Research Projects</span>
+        </div>
+        <div class="stat-glow"></div>
+    </div>
+    <div class="stat animate-stat" data-number="300" data-suffix="+" style="--delay: 0.4s;">
+        <div class="stat-icon">
+            <i class="fas fa-users"></i>
+        </div>
+        <div class="stat-content">
+            <span class="stat-number">0+</span>
+            <span class="stat-label">People Helped</span>
+        </div>
+        <div class="stat-glow"></div>
+    </div>
+</div>
                 <div class="hero-buttons">
                     <a href="about.html" class="btn btn-primary">Learn More</a>
                     <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
