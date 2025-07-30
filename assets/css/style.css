@@ -793,11 +793,6 @@ p {
     color: var(--text-secondary);
 }
 
-.company-logo[data-logo="alef"]::before { content: '📱'; }
-.company-logo[data-logo="bdl"]::before { content: '🏦'; }
-.company-logo[data-logo="sheild"]::before { content: '🛡️'; }
-.university-logo[data-logo="aub"]::before { content: '🎓'; }
-
 .timeline-info h3 {
     color: var(--text-primary);
     margin-bottom: 0.5rem;
