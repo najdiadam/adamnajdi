@@ -786,12 +786,6 @@ p {
     object-fit: contain;
 }
 
-/* Logo fallbacks */
-.company-logo::before,
-.university-logo::before {
-    font-size: 1.5rem;
-    color: var(--text-secondary);
-}
 
 .timeline-info h3 {
     color: var(--text-primary);
