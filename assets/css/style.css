@@ -927,7 +927,7 @@ p {
         width: 280px;
         height: 280px;
         background-size: 115%; /* Slightly more zoom out on mobile */
-        background-position: center 15%; /* Better positioning on mobile */
+        background-position: center 10%; /* Better positioning on mobile */
     }
 }
 
