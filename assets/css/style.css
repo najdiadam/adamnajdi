@@ -597,10 +597,11 @@ p {
     border-radius: 2px;
 }
 
+/* Updated highlights grid for 4 items */
 .highlights-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
     position: relative;
     z-index: 1;
 }
@@ -3549,13 +3550,20 @@ p {
     font-size: 1.125rem;
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-    .highlights-grid,
-    .skills-categories {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+/* Responsive design updates */
+@media (max-width: 1200px) {
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
+}
+
+@media (max-width: 768px) {
+    .highlights-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
     
     .overview-stats {
         grid-template-columns: 1fr;
