@@ -875,7 +875,7 @@ p {
     overflow: hidden;
     background-image: url('assets/images/adam-photo.jpg');
     background-size: 95%; /* Slightly zoom out to show more of the head */
-    background-position: center bottom; /* Move the focus point up to show more of the head */
+    background-position: center 60%; /* Move the focus point up to show more of the head */
     background-repeat: no-repeat;
 }
 
