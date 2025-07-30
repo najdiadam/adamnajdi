@@ -95,19 +95,140 @@ document.addEventListener('DOMContentLoaded', function() {
             heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
         }
     });
+
+    // Contact form handling
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.subject || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // In a real application, you would send this to your server
+            // For now, we'll just show a success message
+            alert('Thank you for your message! I\'ll get back to you within 24-48 hours.');
+            this.reset();
+        });
+    }
+
+    // Enhanced social button effects
+    const socialBtns = document.querySelectorAll('.social-btn');
+    socialBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.05)';
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Add hover effects to cards
+    const cards = document.querySelectorAll('.highlight-card, .timeline-item, .research-card, .project-card, .volunteer-item');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Dynamic typing effect for hero subtitle (optional)
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) {
+        const text = heroSubtitle.textContent;
+        const words = text.split(' ');
+        let currentWord = 0;
+        
+        // Only run if not on mobile to avoid performance issues
+        if (window.innerWidth > 768) {
+            setInterval(() => {
+                if (currentWord < words.length - 1) {
+                    currentWord++;
+                } else {
+                    currentWord = 0;
+                }
+                
+                // Add a subtle highlight effect to the current word
+                const highlightedText = words.map((word, index) => {
+                    if (index === currentWord) {
+                        return `<span style="color: var(--primary-color); transition: color 0.3s ease;">${word}</span>`;
+                    }
+                    return word;
+                }).join(' ');
+                
+                heroSubtitle.innerHTML = highlightedText;
+            }, 3000);
+        }
+    }
 });
 
 // Set initial body opacity
 document.body.style.opacity = '0';
 
-// Add Instagram social button styling
-const instagramBtn = document.querySelector('.social-btn.instagram');
-if (instagramBtn) {
-    instagramBtn.style.background = 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)';
-    instagramBtn.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px) scale(1.05)';
+// Preloader (optional)
+window.addEventListener('load', () => {
+    // Remove any existing preloader
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.remove();
+        }, 500);
+    }
+});
+
+// Add scroll-to-top functionality
+const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
-    instagramBtn.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
+};
+
+// Show scroll-to-top button when scrolled down
+window.addEventListener('scroll', () => {
+    const scrollBtn = document.querySelector('.scroll-to-top');
+    if (scrollBtn) {
+        if (window.scrollY > 300) {
+            scrollBtn.style.opacity = '1';
+            scrollBtn.style.pointerEvents = 'auto';
+        } else {
+            scrollBtn.style.opacity = '0';
+            scrollBtn.style.pointerEvents = 'none';
+        }
+    }
+});
+
+// Performance optimization: Throttle scroll events
+function throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func.apply(this, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
+
+// Apply throttling to scroll-heavy functions
+window.addEventListener('scroll', throttle(() => {
+    // Your scroll-heavy code here
+}, 16)); // ~60fps
