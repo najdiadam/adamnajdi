@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferences, Forums & Fellowships - Adam Najdi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <div class="logo-photo">
+                <img src="assets/images/adam-photo.jpg" alt="Adam Najdi" class="nav-photo">
+                <div class="photo-fallback">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="logo-text">
+                <span class="name">Adam Najdi</span>
+                <span class="title">Economist</span>
+            </div>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="about.html" class="nav-link">
+                <i class="fas fa-user-circle"></i>
+                <span>About</span>
+            </a>
+            <a href="experience.html" class="nav-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </a>
+            <a href="education.html" class="nav-link">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Education</span>
+            </a>
+            <a href="research.html" class="nav-link">
+                <i class="fas fa-microscope"></i>
+                <span>Research</span>
+            </a>
+            <a href="volunteering.html" class="nav-link">
+                <i class="fas fa-heart"></i>
+                <span>Volunteering</span>
+            </a>
+            <a href="leadership.html" class="nav-link">
+                <i class="fas fa-crown"></i>
+                <span>Leadership</span>
+            </a>
+            <a href="extracurriculars.html" class="nav-link">
+                <i class="fas fa-users"></i>
+                <span>Extracurriculars</span>
+            </a>
+            <a href="conferences.html" class="nav-link">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Conferences</span>
+            </a>
+            <a href="awards.html" class="nav-link">
+                <i class="fas fa-trophy"></i>
+                <span>Awards</span>
+            </a>
+            <a href="books.html" class="nav-link">
+                <i class="fas fa-book"></i>
+                <span>Books</span>
+            </a>
+            <a href="workshops.html" class="nav-link">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Workshops</span>
+            </a>
+            <a href="contact.html" class="nav-link">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Conferences, Forums & Fellowships</h1>
+                <p class="page-subtitle">International events and academic engagements</p>
+            </div>
+        </section>
+
+        <section class="conferences-section">
+            <div class="container">
+                
+                <!-- Overview Stats -->
+                <div class="conferences-overview animate-on-scroll">
+                    <h2>Participation Summary</h2>
+                    <div class="overview-stats">
+                        <div class="overview-stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">International Forums</span>
+                        </div>
+                        <div class="overview-stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Nationalities</span>
+                        </div>
+                        <div class="overview-stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Days Intensive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Forum -->
+                <div class="conference-card featured animate-on-scroll">
+                    <div class="conference-header">
+                        <div class="conference-badge">International Forum</div>
+                        <h2>Young Economic Security Forum (YESF) 2025</h2>
+                        <div class="conference-tagline">Centre for International Political Economy (CIPE)</div>
+                        <div class="conference-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Istanbul, Turkey</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conference-content">
+                        <div class="conference-overview">
+                            <h3>Forum Overview</h3>
+                            <p>
+                                Participated in the prestigious Young Economic Security Forum organized by the Centre for 
+                                International Political Economy (CIPE) in Istanbul, Turkey. This international forum brought 
+                                together young leaders, economists, and policymakers from over 50 nationalities to discuss 
+                                critical global economic challenges and security issues.
+                            </p>
+                        </div>
+
+                        <div class="conference-details-grid">
+                            <div class="conference-sessions">
+                                <h3>Key Sessions & Activities</h3>
+                                <div class="sessions-list">
+                                    <div class="session-item">
+                                        <i class="fas fa-users"></i>
+                                        <div>
+                                            <h4>Expert-Led Sessions</h4>
+                                            <p>Participated in sessions led by leading experts in economic security, diplomacy, and strategic forecasting</p>
+                                        </div>
+                                    </div>
+                                    <div class="session-item">
+                                        <i class="fas fa-comments"></i>
+                                        <div>
+                                            <h4>Global Economic Discussions</h4>
+                                            <p>Engaged in in-depth discussions with economists, diplomats and political analysts, analyzing current global processes</p>
+                                        </div>
+                                    </div>
+                                    <div class="session-item">
+                                        <i class="fas fa-building"></i>
+                                        <div>
+                                            <h4>Institutional Visits</h4>
+                                            <p>Visited leading institutions in Istanbul, including the headquarters of ICYF and ASKON</p>
+                                        </div>
+                                    </div>
+                                    <div class="session-item">
+                                        <i class="fas fa-chart-line"></i>
+                                        <div>
+                                            <h4>Financial Technologies & Governance</h4>
+                                            <p>Explored the impact of financial technologies, supply chains, sanctions and economic governance on stability</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="conference-highlights">
+                                <h3>Standout Moments</h3>
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
+                                    <div>
+                                        <h4>"The Role of Youth in Economic Development"</h4>
+                                        <p>
+                                            Participated in this valuable session organized with ICYF leadership, discussing how youth leadership 
+                                            can drive sustainable economy combining financial stability, social equality, and sustainable development.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="fas fa-landmark"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Cultural Tourism & Economic Stability</h4>
+                                        <p>
+                                            Explored how cultural tourism and culture can strengthen economic stability, acting as an instrument 
+                                            of soft power and intercultural dialogue.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Istanbul University Academic Immersion</h4>
+                                        <p>
+                                            Participated in valuable academic and cultural immersion at Istanbul University, reinforcing that knowledge 
+                                            and experience exchange are key to generating new ideas and joint solutions.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificate Display -->
+                        <div class="certificate-display">
+                            <h3>Official Certificate</h3>
+                            <div class="certificate-frame">
+                                <img src="assets/images/yesf-certificate.jpg" alt="Young Economic Security Forum Certificate" class="certificate-image">
+                            </div>
+                        </div>
+
+                        <!-- Photo Gallery -->
+                        <div class="photo-gallery">
+                            <h3>Forum Highlights</h3>
+                            <div class="gallery-grid">
+                                <div class="gallery-item">
+                                    <img src="assets/images/yesf-photo1.jpg" alt="YESF Forum Session" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="assets/images/yesf-photo2.jpg" alt="Istanbul University Visit" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="assets/images/yesf-photo3.jpg" alt="YESF Participants" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="assets/images/yesf-photo4.jpg" alt="ICYF Headquarters Visit" class="gallery-image">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Personal Reflection -->
+                        <div class="conference-reflection">
+                            <h3>Personal Reflection</h3>
+                            <div class="reflection-content">
+                                <blockquote>
+                                    "The Young Economic Security Forum in Istanbul was truly transformative. As a young economist passionate 
+                                    about developmental economics, participating alongside peers from over 50 countries provided invaluable 
+                                    global perspectives on economic security challenges. The session on youth leadership in economic development 
+                                    particularly resonated with my work on Lebanon's economic revitalization through the Global Strategy Review initiative.
+                                    
+                                    <br><br>What struck me most was the emphasis on cultural tourism as an economic stability tool—a concept directly 
+                                    applicable to Lebanon's diverse cultural heritage. The discussions on financial technologies and supply chains 
+                                    offered new frameworks for thinking about economic resilience, especially relevant given Lebanon's current challenges.
+                                    
+                                    <br><br>The academic immersion at Istanbul University reinforced my belief that cross-cultural knowledge exchange 
+                                    is essential for generating innovative economic solutions. This forum served as a powerful reminder that dialogue, 
+                                    innovation, and intercultural cooperation are fundamental to building secure and sustainable economic futures. 
+                                    The connections made and insights gained will undoubtedly influence my ongoing research in developmental economics 
+                                    and policy analysis."
+                                </blockquote>
+                                <cite>- Adam Najdi</cite>
+                            </div>
+                        </div>
+
+                        <!-- Skills & Insights Gained -->
+                        <div class="conference-impact">
+                            <h3>Skills & Insights Gained</h3>
+                            <div class="impact-tags">
+                                <span class="impact-tag">Economic Security Analysis</span>
+                                <span class="impact-tag">Diplomatic Dialogue</span>
+                                <span class="impact-tag">Strategic Forecasting</span>
+                                <span class="impact-tag">Cultural Economics</span>
+                                <span class="impact-tag">International Networking</span>
+                                <span class="impact-tag">Policy Analysis</span>
+                                <span class="impact-tag">Cross-Cultural Communication</span>
+                                <span class="impact-tag">Youth Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Engagements -->
+                <div class="future-conferences animate-on-scroll">
+                    <h2>Looking Forward</h2>
+                    <p>
+                        Building on the valuable experience gained at YESF, I am actively seeking opportunities to participate 
+                        in additional international conferences, forums, and fellowships focused on developmental economics, 
+                        economic security, and policy analysis. These platforms provide essential opportunities for knowledge 
+                        exchange, networking, and contributing to global economic discourse.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Adam Najdi. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/adam-najdi" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/adam.h.najdi/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:najdi.adam04@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
