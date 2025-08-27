@@ -3670,3 +3670,424 @@ p {
         margin: 0 0.5rem;
     }
 }
+
+/* Conferences Page Styles */
+.conferences-section {
+    padding: 100px 0;
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.conferences-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.conferences-overview {
+    text-align: center;
+    margin-bottom: 4rem;
+    background: var(--bg-secondary);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.conferences-overview h2 {
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.conference-card {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    margin-bottom: 4rem;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.conference-card.featured {
+    border-color: var(--primary-color);
+}
+
+.conference-badge {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.conference-header h2 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.conference-tagline {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.conference-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.sessions-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.session-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.session-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.session-item i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.photo-gallery {
+    margin-top: 3rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.gallery-item {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.conference-reflection {
+    margin-top: 3rem;
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.reflection-content blockquote {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.reflection-content cite {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Books Page Styles */
+.books-section {
+    padding: 100px 0;
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.reading-overview {
+    text-align: center;
+    margin-bottom: 4rem;
+    background: var(--bg-secondary);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+}
+
+.book-card {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-xl);
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.book-card.featured {
+    border-color: var(--primary-color);
+}
+
+.book-visual {
+    flex-shrink: 0;
+}
+
+.book-cover {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.book-cover:hover {
+    transform: scale(1.05);
+}
+
+.book-content {
+    flex: 1;
+}
+
+.book-header h3 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-author {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-completion {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.book-reflection {
+    margin: 2rem 0;
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.book-reflection blockquote {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: 0;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.insight-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-sm);
+}
+
+.insight-item i {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+}
+
+.reading-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.category-item {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.category-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.category-item i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.impact-items {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.impact-item {
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.impact-item h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+/* Publications Styles */
+.publications-section {
+    margin-bottom: 4rem;
+}
+
+.publication-card {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-xl);
+    margin-bottom: 3rem;
+}
+
+.publication-card.featured {
+    border-color: var(--primary-color);
+}
+
+.publication-badge {
+    background: var(--gradient-secondary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.publication-details {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-sm);
+}
+
+.detail-item {
+    display: flex;
+    gap: 1rem;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 80px;
+}
+
+.detail-value {
+    color: var(--text-secondary);
+}
+
+.detail-value a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.detail-value a:hover {
+    text-decoration: underline;
+}
+
+.publication-actions {
+    margin-top: 2rem;
+}
+
+.publication-note {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .book-card {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .book-cover {
+        width: 150px;
+        height: 225px;
+        margin: 0 auto;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .insights-grid,
+    .reading-categories {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .conference-details-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
