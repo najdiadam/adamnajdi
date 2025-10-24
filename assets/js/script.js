@@ -551,4 +551,148 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // Rugby photo click to enlarge
+    const rugbyPhoto = document.querySelector('.rugby-photo');
+    if (rugbyPhoto) {
+        rugbyPhoto.addEventListener('click', function() {
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                animation: fadeIn 0.3s ease;
+            `;
+            
+            // Create enlarged image
+            const enlargedImg = document.createElement('img');
+            enlargedImg.src = this.src;
+            enlargedImg.alt = this.alt;
+            enlargedImg.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                border-radius: 8px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+                animation: zoomIn 0.3s ease;
+            `;
+            
+            // Add close button
+            const closeButton = document.createElement('button');
+            closeButton.innerHTML = '<i class="fas fa-times"></i>';
+            closeButton.style.cssText = `
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: rgba(255, 255, 255, 0.2);
+                border: 2px solid white;
+                color: white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                font-size: 1.5rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            
+            closeButton.addEventListener('mouseenter', () => {
+                closeButton.style.background = 'rgba(255, 255, 255, 0.3)';
+                closeButton.style.transform = 'scale(1.1)';
+            });
+            
+            closeButton.addEventListener('mouseleave', () => {
+                closeButton.style.background = 'rgba(255, 255, 255, 0.2)';
+                closeButton.style.transform = 'scale(1)';
+            });
+            
+            overlay.appendChild(enlargedImg);
+            overlay.appendChild(closeButton);
+            document.body.appendChild(overlay);
+            
+            // Close on click anywhere or ESC key
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay || e.target === closeButton || e.target.closest('button')) {
+                    overlay.style.animation = 'fadeOut 0.3s ease';
+                    setTimeout(() => {
+                        document.body.removeChild(overlay);
+                    }, 300);
+                }
+            });
+            
+            // Close on ESC key
+            const escHandler = (e) => {
+                if (e.key === 'Escape') {
+                    overlay.style.animation = 'fadeOut 0.3s ease';
+                    setTimeout(() => {
+                        if (document.body.contains(overlay)) {
+                            document.body.removeChild(overlay);
+                        }
+                    }, 300);
+                    document.removeEventListener('keydown', escHandler);
+                }
+            };
+            document.addEventListener('keydown', escHandler);
+        });
+        
+        // Add hover effect hint
+        rugbyPhoto.style.cursor = 'pointer';
+        rugbyPhoto.title = 'Click to view full size';
+    }
+    
+    // Video controls enhancement
+    const rugbyVideo = document.querySelector('.rugby-video');
+    if (rugbyVideo) {
+        rugbyVideo.addEventListener('play', function() {
+            console.log('Rugby championship video started playing');
+        });
+        
+        rugbyVideo.addEventListener('ended', function() {
+            console.log('Rugby championship video finished');
+        });
+    }
 });
+
+// Add CSS animations for image overlay
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+`;
+document.head.appendChild(style);
