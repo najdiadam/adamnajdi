@@ -3755,6 +3755,26 @@ p {
     margin-bottom: 2rem;
 }
 
+.conference-content {
+    margin-top: 2rem;
+}
+
+.conference-overview {
+    margin-bottom: 2rem;
+}
+
+.conference-overview h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.conference-overview p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.0625rem;
+}
+
 .sessions-list {
     display: grid;
     gap: 1.5rem;
@@ -3779,6 +3799,72 @@ p {
     font-size: 1.25rem;
     flex-shrink: 0;
     margin-top: 0.25rem;
+}
+
+/* Conference Details Grid Layout */
+.conference-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.conference-sessions,
+.conference-highlights {
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+}
+
+.conference-sessions h3,
+.conference-highlights h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.highlight-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.highlight-item:last-child {
+    margin-bottom: 0;
+}
+
+.highlight-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.highlight-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.highlight-item h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+}
+
+.highlight-item p {
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
 }
 
 .photo-gallery {
@@ -3832,7 +3918,44 @@ p {
     font-style: normal;
 }
 
-/* Books Page Styles */
+/* Conference Impact Section */
+.conference-impact {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+}
+
+.conference-impact h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Future Conferences Section */
+.future-conferences {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    text-align: center;
+}
+
+.future-conferences h2 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.future-conferences p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Conferences Overview Stats */
 .books-section {
     padding: 100px 0;
     background: var(--bg-primary);
