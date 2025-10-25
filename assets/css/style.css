@@ -4551,3 +4551,461 @@ p {
     }
 }
 
+/* ==================== CONTACT PAGE SPECIFIC STYLES ==================== */
+
+/* Contact Section Container */
+.contact-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+/* Contact Grid Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contact Info Section */
+.contact-info {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #2c5282;
+}
+
+.contact-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 35px;
+    padding: 0 10px;
+}
+
+/* Contact Methods Grid */
+.contact-methods {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-radius: 12px;
+    border-left: 4px solid #2c5282;
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+    background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+    transform: translateX(5px);
+    border-left-color: #1e3a5f;
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2c5282 0%, #1e3a5f 100%);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px rgba(44, 82, 130, 0.3);
+}
+
+.contact-details {
+    flex: 1;
+    min-width: 0; /* Prevents text overflow issues */
+}
+
+.contact-details h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.contact-details a {
+    display: inline-block;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #2c5282;
+    text-decoration: none;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+    word-break: break-word; /* Prevents long emails/URLs from breaking layout */
+}
+
+.contact-details a:hover {
+    color: #1e3a5f;
+    text-decoration: underline;
+}
+
+.contact-details span {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+}
+
+.contact-details p {
+    font-size: 0.95rem;
+    color: #718096;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Availability Section */
+.availability {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 2px solid #e2e8f0;
+}
+
+.availability h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.availability-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.availability-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.availability-item:hover {
+    border-color: #2c5282;
+    background: #f7fafc;
+    transform: translateX(5px);
+}
+
+.availability-item i {
+    font-size: 1.3rem;
+    color: #2c5282;
+    flex-shrink: 0;
+}
+
+.availability-item span {
+    font-size: 1rem;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+/* Interests Section */
+.interests-section {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interests-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.interests-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #2c5282;
+}
+
+.interests-section > p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.interest-item {
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-radius: 12px;
+    border-left: 4px solid #2c5282;
+    transition: all 0.3s ease;
+}
+
+.interest-item:hover {
+    background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+    transform: translateX(5px);
+    border-left-color: #1e3a5f;
+}
+
+.interest-item i {
+    flex-shrink: 0;
+    font-size: 2rem;
+    color: #2c5282;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.interest-item > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.interest-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.interest-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin: 0;
+}
+
+/* Social Links Section */
+.social-links {
+    background: linear-gradient(135deg, #2c5282 0%, #1e3a5f 100%);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.social-links h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 18px 30px;
+    background: white;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-btn i {
+    font-size: 1.5rem;
+}
+
+.social-btn.linkedin:hover {
+    background: #0077b5;
+    color: white;
+}
+
+.social-btn.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+}
+
+.social-btn.email:hover {
+    background: #ea4335;
+    color: white;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .availability-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .interests-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-buttons {
+        flex-direction: row;
+        justify-content: center;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        gap: 50px;
+    }
+    
+    .interests-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Page Header Styles (if not already defined) */
+.page-header {
+    background: linear-gradient(135deg, #2c5282 0%, #1e3a5f 100%);
+    padding: 80px 0 60px;
+    text-align: center;
+    color: white;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.page-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 767px) {
+    .contact-info,
+    .interests-section,
+    .social-links {
+        padding: 25px 20px;
+    }
+    
+    .contact-info h2,
+    .interests-section h2,
+    .social-links h2 {
+        font-size: 1.6rem;
+    }
+    
+    .contact-intro,
+    .interests-section > p {
+        font-size: 1rem;
+    }
+    
+    .contact-method {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    
+    .contact-details h3 {
+        font-size: 1.1rem;
+    }
+    
+    .interest-item {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .interest-item i {
+        font-size: 1.5rem;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .interest-item h3 {
+        font-size: 1.15rem;
+    }
+    
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+
