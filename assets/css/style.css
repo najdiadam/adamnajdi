@@ -4509,3 +4509,45 @@ p {
         align-items: center;
     }
 }
+
+.conference-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.conference-sessions, 
+.conference-highlights {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.highlight-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+}
+
+.highlight-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .conference-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
