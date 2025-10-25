@@ -4551,12 +4551,10 @@ p {
     }
 }
 
-/* ==================== CONTACT PAGE SPECIFIC STYLES ==================== */
-
-/* Contact Section Container */
+* Contact Section Container */
 .contact-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
 }
 
 /* Contact Grid Layout */
@@ -4585,16 +4583,16 @@ p {
 .contact-info h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #1e293b;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 3px solid #2c5282;
+    border-bottom: 3px solid #2563eb;
 }
 
 .contact-intro {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #4a5568;
+    color: #64748b;
     margin-bottom: 35px;
     padding: 0 10px;
 }
@@ -4612,16 +4610,16 @@ p {
     align-items: flex-start;
     gap: 20px;
     padding: 25px;
-    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     border-radius: 12px;
-    border-left: 4px solid #2c5282;
+    border-left: 4px solid #2563eb;
     transition: all 0.3s ease;
 }
 
 .contact-method:hover {
-    background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
     transform: translateX(5px);
-    border-left-color: #1e3a5f;
+    border-left-color: #1d4ed8;
 }
 
 .contact-icon {
@@ -4631,22 +4629,22 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #2c5282 0%, #1e3a5f 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     border-radius: 12px;
     color: white;
     font-size: 1.5rem;
-    box-shadow: 0 4px 6px rgba(44, 82, 130, 0.3);
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
 }
 
 .contact-details {
     flex: 1;
-    min-width: 0; /* Prevents text overflow issues */
+    min-width: 0;
 }
 
 .contact-details h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #1e293b;
     margin-bottom: 8px;
 }
 
@@ -4654,15 +4652,15 @@ p {
     display: inline-block;
     font-size: 1.05rem;
     font-weight: 500;
-    color: #2c5282;
+    color: #2563eb;
     text-decoration: none;
     margin-bottom: 6px;
     transition: color 0.3s ease;
-    word-break: break-word; /* Prevents long emails/URLs from breaking layout */
+    word-break: break-word;
 }
 
 .contact-details a:hover {
-    color: #1e3a5f;
+    color: #1d4ed8;
     text-decoration: underline;
 }
 
@@ -4670,13 +4668,13 @@ p {
     display: block;
     font-size: 1.05rem;
     font-weight: 500;
-    color: #1a1a1a;
+    color: #1e293b;
     margin-bottom: 6px;
 }
 
 .contact-details p {
     font-size: 0.95rem;
-    color: #718096;
+    color: #64748b;
     line-height: 1.6;
     margin: 0;
 }
@@ -4691,7 +4689,7 @@ p {
 .availability h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #1e293b;
     margin-bottom: 20px;
 }
 
@@ -4713,20 +4711,20 @@ p {
 }
 
 .availability-item:hover {
-    border-color: #2c5282;
-    background: #f7fafc;
+    border-color: #2563eb;
+    background: #f8fafc;
     transform: translateX(5px);
 }
 
 .availability-item i {
     font-size: 1.3rem;
-    color: #2c5282;
+    color: #2563eb;
     flex-shrink: 0;
 }
 
 .availability-item span {
     font-size: 1rem;
-    color: #2d3748;
+    color: #1e293b;
     line-height: 1.6;
 }
 
@@ -4747,16 +4745,16 @@ p {
 .interests-section h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #1e293b;
     margin-bottom: 15px;
     padding-bottom: 15px;
-    border-bottom: 3px solid #2c5282;
+    border-bottom: 3px solid #2563eb;
 }
 
 .interests-section > p {
     font-size: 1.05rem;
     line-height: 1.8;
-    color: #4a5568;
+    color: #64748b;
     margin-bottom: 30px;
     padding: 0 10px;
 }
@@ -4771,22 +4769,22 @@ p {
     display: flex;
     gap: 20px;
     padding: 25px;
-    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     border-radius: 12px;
-    border-left: 4px solid #2c5282;
+    border-left: 4px solid #2563eb;
     transition: all 0.3s ease;
 }
 
 .interest-item:hover {
-    background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
     transform: translateX(5px);
-    border-left-color: #1e3a5f;
+    border-left-color: #1d4ed8;
 }
 
 .interest-item i {
     flex-shrink: 0;
     font-size: 2rem;
-    color: #2c5282;
+    color: #2563eb;
     width: 50px;
     height: 50px;
     display: flex;
@@ -4805,20 +4803,20 @@ p {
 .interest-item h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #1e293b;
     margin-bottom: 10px;
 }
 
 .interest-item p {
     font-size: 1rem;
     line-height: 1.7;
-    color: #4a5568;
+    color: #64748b;
     margin: 0;
 }
 
 /* Social Links Section */
 .social-links {
-    background: linear-gradient(135deg, #2c5282 0%, #1e3a5f 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -4847,7 +4845,7 @@ p {
     gap: 15px;
     padding: 18px 30px;
     background: white;
-    color: #1a1a1a;
+    color: #1e293b;
     text-decoration: none;
     border-radius: 12px;
     font-size: 1.1rem;
@@ -4923,9 +4921,9 @@ p {
     transform: translateY(0);
 }
 
-/* Page Header Styles (if not already defined) */
+/* Page Header Styles */
 .page-header {
-    background: linear-gradient(135deg, #2c5282 0%, #1e3a5f 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     padding: 80px 0 60px;
     text-align: center;
     color: white;
@@ -5007,5 +5005,3 @@ p {
         font-size: 1.1rem;
     }
 }
-
-
