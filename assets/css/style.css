@@ -4550,8 +4550,10 @@ p {
         grid-template-columns: 1fr;
     }
 }
+/* ==================== CONTACT PAGE - PURPLE GRADIENT THEME ==================== */
+/* Matches your site's purple gradient: #667eea to #764ba2 */
 
-* Contact Section Container */
+/* Contact Section Container */
 .contact-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
@@ -4583,10 +4585,15 @@ p {
 .contact-info h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #1e293b;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 3px solid #2563eb;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-image-slice: 1;
 }
 
 .contact-intro {
@@ -4612,14 +4619,14 @@ p {
     padding: 25px;
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     border-radius: 12px;
-    border-left: 4px solid #2563eb;
+    border-left: 4px solid #667eea;
     transition: all 0.3s ease;
 }
 
 .contact-method:hover {
     background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
     transform: translateX(5px);
-    border-left-color: #1d4ed8;
+    border-left-color: #764ba2;
 }
 
 .contact-icon {
@@ -4629,11 +4636,11 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 12px;
     color: white;
     font-size: 1.5rem;
-    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
 }
 
 .contact-details {
@@ -4652,16 +4659,19 @@ p {
     display: inline-block;
     font-size: 1.05rem;
     font-weight: 500;
-    color: #2563eb;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-decoration: none;
     margin-bottom: 6px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     word-break: break-word;
 }
 
 .contact-details a:hover {
-    color: #1d4ed8;
     text-decoration: underline;
+    filter: brightness(1.2);
 }
 
 .contact-details span {
@@ -4711,14 +4721,14 @@ p {
 }
 
 .availability-item:hover {
-    border-color: #2563eb;
-    background: #f8fafc;
+    border-color: #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
     transform: translateX(5px);
 }
 
 .availability-item i {
     font-size: 1.3rem;
-    color: #2563eb;
+    color: #667eea;
     flex-shrink: 0;
 }
 
@@ -4745,10 +4755,15 @@ p {
 .interests-section h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #1e293b;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 15px;
     padding-bottom: 15px;
-    border-bottom: 3px solid #2563eb;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-image-slice: 1;
 }
 
 .interests-section > p {
@@ -4771,20 +4786,20 @@ p {
     padding: 25px;
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     border-radius: 12px;
-    border-left: 4px solid #2563eb;
+    border-left: 4px solid #667eea;
     transition: all 0.3s ease;
 }
 
 .interest-item:hover {
     background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
     transform: translateX(5px);
-    border-left-color: #1d4ed8;
+    border-left-color: #764ba2;
 }
 
 .interest-item i {
     flex-shrink: 0;
     font-size: 2rem;
-    color: #2563eb;
+    color: #667eea;
     width: 50px;
     height: 50px;
     display: flex;
@@ -4812,6 +4827,15 @@ p {
     line-height: 1.7;
     color: #64748b;
     margin: 0;
+}
+
+/* Social Links Section */
+.social-links {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .social-links h2 {
@@ -4914,7 +4938,7 @@ p {
 
 /* Page Header Styles */
 .page-header {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 80px 0 60px;
     text-align: center;
     color: white;
