@@ -4556,16 +4556,14 @@ p {
     }
 }
 /* ==================== CONTACT PAGE - PURPLE GRADIENT THEME ==================== */
-/* Matches your site's purple gradient: #667eea to #764ba2 */
+/* Scoped to contact page only to avoid conflicts */
 
-/* Contact Section Container */
-.contact-section {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+.contact-section .container {
+    max-width: 1200px;
 }
 
-/* Contact Grid Layout */
-.contact-grid {
+/* Contact Grid Layout - Specific to contact page */
+.contact-section .contact-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
@@ -4573,8 +4571,8 @@ p {
     margin: 0 auto;
 }
 
-/* Contact Info Section */
-.contact-info {
+/* Contact Info Section - Specific to contact page */
+.contact-section .contact-info {
     background: white;
     padding: 40px;
     border-radius: 16px;
@@ -4582,12 +4580,12 @@ p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-info:hover {
+.contact-section .contact-info:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-.contact-info h2 {
+.contact-section .contact-info h2 {
     font-size: 2rem;
     font-weight: 700;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -4601,7 +4599,7 @@ p {
     border-image-slice: 1;
 }
 
-.contact-intro {
+.contact-section .contact-intro {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #64748b;
@@ -4609,15 +4607,15 @@ p {
     padding: 0 10px;
 }
 
-/* Contact Methods Grid */
-.contact-methods {
+/* Contact Methods Grid - Specific to contact page */
+.contact-section .contact-methods {
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
     margin-bottom: 40px;
 }
 
-.contact-method {
+.contact-section .contact-method {
     display: flex;
     align-items: flex-start;
     gap: 20px;
@@ -4628,13 +4626,13 @@ p {
     transition: all 0.3s ease;
 }
 
-.contact-method:hover {
+.contact-section .contact-method:hover {
     background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
     transform: translateX(5px);
     border-left-color: #764ba2;
 }
 
-.contact-icon {
+.contact-section .contact-icon {
     flex-shrink: 0;
     width: 50px;
     height: 50px;
@@ -4648,19 +4646,19 @@ p {
     box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
 }
 
-.contact-details {
+.contact-section .contact-details {
     flex: 1;
     min-width: 0;
 }
 
-.contact-details h3 {
+.contact-section .contact-details h3 {
     font-size: 1.3rem;
     font-weight: 600;
     color: #1e293b;
     margin-bottom: 8px;
 }
 
-.contact-details a {
+.contact-section .contact-details a {
     display: inline-block;
     font-size: 1.05rem;
     font-weight: 500;
@@ -4674,12 +4672,12 @@ p {
     word-break: break-word;
 }
 
-.contact-details a:hover {
+.contact-section .contact-details a:hover {
     text-decoration: underline;
     filter: brightness(1.2);
 }
 
-.contact-details span {
+.contact-section .contact-details span {
     display: block;
     font-size: 1.05rem;
     font-weight: 500;
@@ -4687,34 +4685,34 @@ p {
     margin-bottom: 6px;
 }
 
-.contact-details p {
+.contact-section .contact-details p {
     font-size: 0.95rem;
     color: #64748b;
     line-height: 1.6;
     margin: 0;
 }
 
-/* Availability Section */
-.availability {
+/* Availability Section - Specific to contact page */
+.contact-section .availability {
     margin-top: 35px;
     padding-top: 30px;
     border-top: 2px solid #e2e8f0;
 }
 
-.availability h3 {
+.contact-section .availability h3 {
     font-size: 1.5rem;
     font-weight: 600;
     color: #1e293b;
     margin-bottom: 20px;
 }
 
-.availability-info {
+.contact-section .availability-info {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
 }
 
-.availability-item {
+.contact-section .availability-item {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -4725,26 +4723,26 @@ p {
     transition: all 0.3s ease;
 }
 
-.availability-item:hover {
+.contact-section .availability-item:hover {
     border-color: #667eea;
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
     transform: translateX(5px);
 }
 
-.availability-item i {
+.contact-section .availability-item i {
     font-size: 1.3rem;
     color: #667eea;
     flex-shrink: 0;
 }
 
-.availability-item span {
+.contact-section .availability-item span {
     font-size: 1rem;
     color: #1e293b;
     line-height: 1.6;
 }
 
-/* Interests Section */
-.interests-section {
+/* Interests Section - Specific to contact page only */
+.contact-section .interests-section {
     background: white;
     padding: 40px;
     border-radius: 16px;
@@ -4752,12 +4750,12 @@ p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.interests-section:hover {
+.contact-section .interests-section:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-.interests-section h2 {
+.contact-section .interests-section h2 {
     font-size: 2rem;
     font-weight: 700;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -4771,7 +4769,7 @@ p {
     border-image-slice: 1;
 }
 
-.interests-section > p {
+.contact-section .interests-section > p {
     font-size: 1.05rem;
     line-height: 1.8;
     color: #64748b;
@@ -4779,13 +4777,13 @@ p {
     padding: 0 10px;
 }
 
-.interests-grid {
+.contact-section .interests-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
 }
 
-.interest-item {
+.contact-section .interest-item {
     display: flex;
     gap: 20px;
     padding: 25px;
@@ -4795,13 +4793,13 @@ p {
     transition: all 0.3s ease;
 }
 
-.interest-item:hover {
+.contact-section .interest-item:hover {
     background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
     transform: translateX(5px);
     border-left-color: #764ba2;
 }
 
-.interest-item i {
+.contact-section .interest-item i {
     flex-shrink: 0;
     font-size: 2rem;
     color: #667eea;
@@ -4815,27 +4813,27 @@ p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.interest-item > div {
+.contact-section .interest-item > div {
     flex: 1;
     min-width: 0;
 }
 
-.interest-item h3 {
+.contact-section .interest-item h3 {
     font-size: 1.3rem;
     font-weight: 600;
     color: #1e293b;
     margin-bottom: 10px;
 }
 
-.interest-item p {
+.contact-section .interest-item p {
     font-size: 1rem;
     line-height: 1.7;
     color: #64748b;
     margin: 0;
 }
 
-/* Social Links Section */
-.social-links {
+/* Social Links Section - Specific to contact page */
+.contact-section .social-links {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 40px;
     border-radius: 16px;
@@ -4843,14 +4841,14 @@ p {
     text-align: center;
 }
 
-.social-links h2 {
+.contact-section .social-links h2 {
     font-size: 2rem;
     font-weight: 700;
     color: white;
     margin-bottom: 30px;
 }
 
-.social-buttons {
+.contact-section .social-buttons {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -4858,7 +4856,7 @@ p {
     margin: 0 auto;
 }
 
-.social-btn {
+.contact-section .social-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4874,45 +4872,45 @@ p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.social-btn:hover {
+.contact-section .social-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.social-btn i {
+.contact-section .social-btn i {
     font-size: 1.5rem;
 }
 
-.social-btn.linkedin:hover {
+.contact-section .social-btn.linkedin:hover {
     background: #0077b5;
     color: white;
 }
 
-.social-btn.instagram:hover {
+.contact-section .social-btn.instagram:hover {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     color: white;
 }
 
-.social-btn.email:hover {
+.contact-section .social-btn.email:hover {
     background: #ea4335;
     color: white;
 }
 
-/* Responsive Design */
+/* Responsive Design for Contact Page */
 @media (min-width: 768px) {
-    .contact-methods {
+    .contact-section .contact-methods {
         grid-template-columns: 1fr;
     }
     
-    .availability-info {
+    .contact-section .availability-info {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .interests-grid {
+    .contact-section .interests-grid {
         grid-template-columns: 1fr;
     }
     
-    .social-buttons {
+    .contact-section .social-buttons {
         flex-direction: row;
         justify-content: center;
         max-width: 100%;
@@ -4920,12 +4918,62 @@ p {
 }
 
 @media (min-width: 1024px) {
-    .contact-grid {
+    .contact-section .contact-grid {
         gap: 50px;
     }
     
-    .interests-grid {
+    .contact-section .interests-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Optimizations for Contact Page */
+@media (max-width: 767px) {
+    .contact-section .contact-info,
+    .contact-section .interests-section,
+    .contact-section .social-links {
+        padding: 25px 20px;
+    }
+    
+    .contact-section .contact-info h2,
+    .contact-section .interests-section h2,
+    .contact-section .social-links h2 {
+        font-size: 1.6rem;
+    }
+    
+    .contact-section .contact-intro,
+    .contact-section .interests-section > p {
+        font-size: 1rem;
+    }
+    
+    .contact-section .contact-method {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .contact-section .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    
+    .contact-section .contact-details h3 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-section .interest-item {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .contact-section .interest-item i {
+        font-size: 1.5rem;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .contact-section .interest-item h3 {
+        font-size: 1.15rem;
     }
 }
 
