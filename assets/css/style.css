@@ -1148,11 +1148,11 @@ p {
 }
 
 .timeline-description li::before {
-   content: 'â–¸';
-   position: absolute;
-   left: 0;
-   color: var(--primary-color);
-   font-weight: bold;
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 /* Education Styles */
